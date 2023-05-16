@@ -12,8 +12,6 @@ any two files
 $ echo "file 1" > file1; echo "file 2" > file2
 
 $ idiff file1 file2
-
-$ idiff file1 file2
 diff --git a/temp b/temp
 index 366f17f..fac580e 100644
 --- a/temp
