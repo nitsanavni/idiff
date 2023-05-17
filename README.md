@@ -1,4 +1,4 @@
-I like Git's interactive diff utilities!
+I like [Git's interactive/patch diff](https://git-scm.com/book/en/v2/Git-Tools-Interactive-Staging) utilities!
 
 Sometimes it's useful with any two files, not necessarily under Git.
 
@@ -9,18 +9,18 @@ One common example for me is to use it as a diff tool with Approval Tests.
 any two files
 
 ```shell
-$ echo "file 1" > file1; echo "file 2" > file2
+$ echo src > src; echo dst > dst
 
-$ idiff file1 file2
+$ ./idiff.sh src dst
 diff --git a/temp b/temp
-index 366f17f..fac580e 100644
+index c419571..85de9cf 100644
 --- a/temp
 +++ b/temp
 @@ -1 +1 @@
--file 1
-+file 2
+-dst
++src
 (1/1) Stage this hunk [y,n,q,a,d,e,?]? y
 
-$ cat file1
-file 2
+$ cat dst
+src
 ```

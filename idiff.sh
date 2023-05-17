@@ -1,9 +1,13 @@
-#!/bin/bash
+#!/bin/bash -i
 
-# Usage: idiff dst src
+if [ "$#" -ne 2 ]; then
+    echo "Usage: idiff src dst"
+    echo "Interactively patch dst from src, using 'git add --patch'"
+    exit 0
+fi
 
-dst=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
-src=$(cd "$(dirname "$2")"; pwd -P)/$(basename "$2")
+src=$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")
+dst=$(cd "$(dirname "$2")"; pwd -P)/$(basename "$2")
 idiff_repo=~/.idiff-repo
 
 # Ensure the idiff repo exists and is initialized
